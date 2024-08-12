@@ -1,7 +1,12 @@
 package com.example.HospitalConSpring.entity;
 
-public class Medicamentos {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name= "medicamentos")
+public class Medicamentos {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long codigo;
     private String nombre;
     private String cantidad;

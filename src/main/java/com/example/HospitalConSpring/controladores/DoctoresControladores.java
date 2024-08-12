@@ -4,6 +4,7 @@ import com.example.HospitalConSpring.entity.Doctores;
 import com.example.HospitalConSpring.repository.DoctoresRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.Optional;
 @RestController
 public class DoctoresControladores {
 //atributo
+    @Autowired
     private DoctoresRepository doctoresRepository;
     private final Logger log = LoggerFactory.getLogger(DoctoresControladores.class);
 
@@ -71,6 +73,7 @@ public class DoctoresControladores {
 
     //borrar doctores
     @DeleteMapping("/api/delate/{id}")
+
     public ResponseEntity<Doctores> delate(@RequestBody Long id){
 
         if(!doctoresRepository.existsById(id)){
