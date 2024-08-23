@@ -2,6 +2,7 @@ package com.example.HospitalConSpring.entity;
 
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name="doctor")
 public class Doctores {
@@ -16,7 +17,7 @@ public class Doctores {
     private String contraseña;
     private int telefono;
 
-    public Doctores(String nombre, String apellido, String dni, String especialidad, String email, String contraseña, int telefono) {
+    public Doctores() {
     }
 
     public Doctores(Long id, String nombre, String apellido, String dni, String especialidad, String email, String contraseña, int telefono) {

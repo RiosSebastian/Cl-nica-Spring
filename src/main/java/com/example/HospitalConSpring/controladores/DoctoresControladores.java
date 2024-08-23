@@ -4,35 +4,28 @@ import com.example.HospitalConSpring.entity.Doctores;
 import com.example.HospitalConSpring.repository.DoctoresRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 public class DoctoresControladores {
 //atributo
-    @Autowired
+
     private DoctoresRepository doctoresRepository;
     private final Logger log = LoggerFactory.getLogger(DoctoresControladores.class);
 
-    public DoctoresControladores(DoctoresRepository doctoresRepository) {
-        this.doctoresRepository = doctoresRepository;
-    }
 
-    //buscar doctores.
-    @GetMapping("api/doctores")
-    public List<Doctores>finAll(){
-        return doctoresRepository.findAll();
-    }
+
 
     //buscar doctor
     @GetMapping("api/doctor/{especialidad}")
     public ResponseEntity<Doctores>findOneById(@PathVariable String especialidad){
-        Optional<Doctores> doctorestt=doctoresRepository.findAll(especialidad);
+        Optional<Doctores> doctorestt=doctoresRepository.findByespecialidad(especialidad);
         if(doctorestt.isPresent()){
             return ResponseEntity.ok(doctorestt.get());
         }else{

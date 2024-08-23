@@ -15,13 +15,13 @@ public class HospitalConSpringApplication {
 		DoctoresRepository repository = contex.getBean(DoctoresRepository.class);
 
 
-		Doctores doctores = new Doctores(null, "sebastian", "rios", "43690410", "pediatras", "sebarios@gmail.com", "1211120022", 457457);
-		Doctores doctores1 = new Doctores(null, "esteban", "feldick", "43690410", "nutricion", "estebanrios@gmail.com" ,"14528755", 457812);
+	//	Doctores doctores = new Doctores(null, "sebastian", "rios", "43690410", "pediatras", "sebarios@gmail.com", "1211120022", 457457);
+	//	Doctores doctores1 = new Doctores(null, "esteban", "feldick", "43690410", "nutricion", "estebanrios@gmail.com" ,"14528755", 457812);
 
-		System.out.println("numero de libros en la base de datos " + repository.findAll().size());
-		repository.save(doctores);
-		repository.save(doctores1);
-		System.out.println("numero de libros en la base de datos " + repository.findAll().size());
+	//	System.out.println("numero de libros en la base de datos " + repository.findAll().size());
+	//	repository.save(doctores);
+	//	repository.save(doctores1);
+	//	System.out.println("numero de libros en la base de datos " + repository.findAll().size());
 
 	}
 }

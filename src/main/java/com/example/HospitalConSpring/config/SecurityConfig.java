@@ -35,6 +35,7 @@ public class SecurityConfig {
         // Añadir el filtro JWT antes del filtro de autenticación por nombre de usuario y contraseña
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
+
         return http.build();
     }
 
