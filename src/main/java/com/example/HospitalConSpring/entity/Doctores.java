@@ -1,10 +1,12 @@
 package com.example.HospitalConSpring.entity;
 
 import jakarta.persistence.*;
+import org.springframework.web.bind.annotation.Mapping;
 
 
 @Entity
 @Table(name="doctor")
+
 public class Doctores {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
